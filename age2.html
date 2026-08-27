@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3~4개월차 · 육아역할 · 육아답</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+:root{
+  --paper:#FFFCF3;
+  --dotgrid:#EAE2CC;
+  --ink:#221D17;
+  --ink-soft:#5A5347;
+  --pink:#FFC9D6;
+  --pink-d:#F79CB4;
+  --blue:#BFE3FF;
+  --blue-d:#8FCBFF;
+  --mint:#C9F2D8;
+  --mint-d:#8FE0B4;
+  --yellow:#FFE79A;
+  --yellow-d:#FFD65C;
+  --lav:#E4D8FF;
+  --lav-d:#C9B6FF;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background-color:var(--paper);
+  background-image:radial-gradient(circle, var(--dotgrid) 1.3px, transparent 1.3px);
+  background-size:24px 24px;
+  color:var(--ink);
+  font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.app{max-width:720px;margin:0 auto;padding:30px 18px 70px;min-height:100vh;}
+
+h1,h2,.font-display{font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-weight:700;}
+
+/* ---- brand ---- */
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:30px;}
+.brand a{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand svg{width:34px;height:34px;flex:none;}
+.brand-name{font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;font-size:18px;font-weight:700;}
+
+.back-link{display:inline-flex; align-items:center; gap:4px; font-size:14px; color:var(--ink-soft); text-decoration:none; margin-bottom:18px;}
+.back-link:hover{color:var(--ink);}
+
+/* ---- sketch base ---- */
+.sketch{position:relative; border:2.5px solid var(--ink); z-index:0; background:var(--card);}
+.sketch::before{content:'';position:absolute;inset:-5px;border:2px solid var(--ink);opacity:.28;border-radius:inherit;z-index:-1;}
+.wob-1{border-radius:255px 18px 225px 30px/28px 225px 30px 255px;}
+.wob-2{border-radius:22px 240px 24px 235px/235px 24px 240px 22px;}
+.tilt-1{transform:rotate(-1.1deg);}
+.tilt-2{transform:rotate(0.9deg);}
+
+.sticker-tag{
+  display:inline-block; font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-size:14px; font-weight:700;
+  background:var(--blue); border:2px solid var(--ink); border-radius:255px 20px 225px 20px/20px 225px 20px 255px;
+  padding:3px 14px; transform:rotate(-2deg); margin-bottom:14px;
+}
+
+h1{font-size:clamp(26px,6vw,36px); line-height:1.28; margin:0 0 12px;}
+p.lede{font-size:16px; line-height:1.6; color:var(--ink-soft); max-width:52ch; margin:0 0 32px;}
+
+/* ---- project cards ---- */
+.project-card{padding:24px 22px; margin-bottom:22px;}
+.project-top{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+.project-name{font-size:20px; font-weight:700;}
+.project-status{font-size:11.5px; font-weight:700; padding:3px 11px; border:1.5px solid var(--ink); border-radius:999px; background:var(--mint);}
+.project-desc{font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin:0 0 18px;}
+
+.sub-list{display:flex; flex-direction:column; gap:10px;}
+.sub-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:13px 16px; border:2px solid var(--ink); border-radius:16px 8px 16px 8px; background:#FFFCF3;
+}
+.sub-row .sub-info{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.sub-row .sub-name{font-size:15px; font-weight:700;}
+.sub-badge{font-size:11px; font-weight:700; padding:2px 9px; border:1.5px solid var(--ink); border-radius:999px; background:var(--yellow);}
+.sub-row .btn-go{
+  appearance:none; cursor:pointer; font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-size:13px; font-weight:700;
+  border:2px solid var(--ink); border-radius:255px 16px 225px 16px/16px 225px 16px 255px;
+  padding:8px 14px; background:#fff; box-shadow:2px 2px 0 var(--ink); text-decoration:none; color:var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease; white-space:nowrap;
+}
+.sub-row .btn-go:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 var(--ink);}
+
+.more-note{font-size:13.5px; color:var(--ink-soft); margin-top:16px; padding-top:14px; border-top:2px dashed var(--dotgrid);}
+
+footer.foot{text-align:center; margin-top:44px; font-size:12px; color:var(--ink-soft); font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;}
+</style>
+<style>
+.role-legend{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 22px}
+.role-chip{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;border:2px solid var(--ink);background:var(--card)}
+.role-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.role-dot.wife{background:var(--pink-d)}
+.role-dot.husband{background:var(--blue-d)}
+.role-dot.helper{background:var(--mint-d)}
+.role-dot.extra{background:var(--lav-d)}
+.note-box{background:var(--yellow);border:2px solid var(--ink);border-radius:16px;padding:14px 18px;font-size:14px;line-height:1.6;margin-bottom:26px;box-shadow:3px 3px 0 var(--ink)}
+.section-title{margin:0 0 4px;font-size:19px}
+.section-sub{color:var(--ink-soft);font-size:13px;margin:0 0 16px}
+.role-summary{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.role-summary-item{flex:1;min-width:110px;border:2px solid var(--ink);border-radius:16px;padding:12px 14px;text-align:center;box-shadow:3px 3px 0 var(--ink)}
+.role-summary-item.wife{background:var(--pink)}
+.role-summary-item.husband{background:var(--blue)}
+.role-summary-item.helper{background:var(--mint)}
+.role-summary-item.extra{background:var(--lav)}
+.role-summary-name{font-size:12px;font-weight:700;opacity:.8}
+.role-summary-hours{font-size:22px;font-weight:800;margin-top:2px}
+.timeline{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+.timeline-row{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:3px 3px 0 var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+.timeline-time{font-weight:800;font-size:15px;min-width:104px}
+.activity-flow{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:180px}
+.activity-pill{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;padding:4px 9px;border-radius:999px;border:1.5px solid var(--ink);background:var(--paper);white-space:nowrap}
+.role-select{font-family:inherit;font-weight:800;font-size:12.5px;padding:7px 10px;border-radius:12px;border:2px solid var(--ink);cursor:pointer;min-width:104px;text-align:center;color:var(--ink)}
+.role-select.wife{background:var(--pink)}
+.role-select.husband{background:var(--blue)}
+.role-select.helper{background:var(--mint)}
+.role-select.extra{background:var(--lav)}
+.age-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.age-nav a{font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;border:2px solid var(--ink);background:var(--card);text-decoration:none;color:var(--ink)}
+.age-nav a.current{background:var(--pink-d)}
+@media (max-width:480px){.timeline-row{padding:12px}.timeline-time{min-width:80px;font-size:13px}}
+</style>
+<body>
+<div class="app">
+<div class="brand"><svg viewBox="0 0 64 64"><circle cx="32" cy="36" r="20" fill="#E9F3FF" stroke="var(--ink)" stroke-width="2.5"/><circle cx="24" cy="34" r="2.5" fill="var(--ink)"/><circle cx="40" cy="34" r="2.5" fill="var(--ink)"/><path d="M24 44 Q32 50 40 44" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 30 Q20 14 32 14 Q44 14 50 30" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><div class="brand-name">육아답 프로젝트 · 육아역할</div></div>
+<a class="back-link" href="index.html">← 육아역할 다른 편 보기</a>
+<span class="sticker-tag">⏰ 3~4개월차 · 4시간 수유텀</span>
+<h1>3~4개월차,<br>패턴이 조금씩 보여요</h1>
+<p class="lede">이 시기는 4시간마다 수유가 필요하다고 가정했어요. 막수는 밤 11시 기준, 하루 6번의 수유 텀에 맞춰 놀고·먹고·자고 흐름과 담당을 나눠봤어요.</p>
+<div class="age-nav"><a href="age1.html">🌙 1~2개월차</a><a href="age2.html" class="current">⏰ 3~4개월차</a><a href="age3.html">☀️ 5~6개월차</a></div><div class="note-box">⚠️ 4개월 무렵엔 수면 주기가 어른과 비슷해지면서 일시적으로 잠투정이 늘 수 있어요(4개월 수면 퇴행). 산후도우미 지원이 끝났다면 +알파(조부모·이모 등) 칸을 활용해보세요.</div>
+<div class="role-legend"><span class="role-chip"><span class="role-dot wife"></span>아내</span><span class="role-chip"><span class="role-dot husband"></span>남편</span><span class="role-chip"><span class="role-dot helper"></span>산후도우미</span><span class="role-chip"><span class="role-dot extra"></span>+알파 (조부모·이모 등)</span></div>
+<h2 class="section-title">누가 몇 시간 맡을까요?</h2>
+<p class="section-sub">담당을 바꾸면 아래 숫자도 바로 바뀌어요.</p>
+<div class="role-summary"><div class="role-summary-item wife"><div class="role-summary-name">아내</div><div class="role-summary-hours" data-role="wife">0시간</div></div><div class="role-summary-item husband"><div class="role-summary-name">남편</div><div class="role-summary-hours" data-role="husband">0시간</div></div><div class="role-summary-item helper"><div class="role-summary-name">산후도우미</div><div class="role-summary-hours" data-role="helper">0시간</div></div><div class="role-summary-item extra"><div class="role-summary-name">+알파</div><div class="role-summary-hours" data-role="extra">0시간</div></div></div>
+<h2 class="section-title">하루 24시간 흐름</h2>
+<p class="section-sub">한 타임(4시간)마다 먹고 → 놀고 → 자고 순서예요.</p>
+<div class="timeline">
+<div class="timeline-row"><div class="timeline-time">03:00~07:00</div><div class="activity-flow"><span class="activity-pill">🍼 새벽수유 03:00~03:15</span><span class="activity-pill">😴 자고 03:15~07:00</span></div><select class="role-select husband" data-idx="0" data-hours="4"><option value="wife">아내</option><option value="husband" selected>남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">07:00~11:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 07:00~07:20</span><span class="activity-pill">🎈 놀고 07:20~08:30</span><span class="activity-pill">😴 자고 08:30~11:00</span></div><select class="role-select wife" data-idx="1" data-hours="4"><option value="wife" selected>아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">11:00~15:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 11:00~11:20</span><span class="activity-pill">🎈 놀고 11:20~12:30</span><span class="activity-pill">😴 자고 12:30~15:00</span></div><select class="role-select extra" data-idx="2" data-hours="4"><option value="wife">아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra" selected>+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">15:00~19:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 15:00~15:20</span><span class="activity-pill">🎈 놀고 15:20~16:30</span><span class="activity-pill">😴 자고 16:30~19:00</span></div><select class="role-select wife" data-idx="3" data-hours="4"><option value="wife" selected>아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">19:00~23:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 19:00~19:20</span><span class="activity-pill">🎈 놀고 19:20~20:30</span><span class="activity-pill">😴 자고 20:30~23:00</span></div><select class="role-select husband" data-idx="4" data-hours="4"><option value="wife">아내</option><option value="husband" selected>남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">23:00~03:00</div><div class="activity-flow"><span class="activity-pill">🍼 막수 23:00~23:15</span><span class="activity-pill">😴 자고 23:15~03:00</span></div><select class="role-select wife" data-idx="5" data-hours="4"><option value="wife" selected>아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+</div>
+
+<footer class="foot">☁ 육아답 · 프로토타입 버전 · 담당은 예시일 뿐, 우리 집 상황에 맞게 바꿔보세요 ☁</footer>
+</div>
+<script>
+(function(){
+  var STORAGE_KEY = "yukadap-role-age2";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch(e) { saved = {}; }
+  var selects = Array.prototype.slice.call(document.querySelectorAll(".role-select"));
+  selects.forEach(function(sel){
+    var idx = sel.getAttribute("data-idx");
+    if (saved[idx]) { sel.value = saved[idx]; }
+    sel.className = "role-select " + sel.value;
+  });
+  function summarize(){
+    var totals = {wife:0, husband:0, helper:0, extra:0};
+    selects.forEach(function(sel){
+      var h = parseFloat(sel.getAttribute("data-hours")) || 0;
+      totals[sel.value] = (totals[sel.value] || 0) + h;
+    });
+    Object.keys(totals).forEach(function(k){
+      var el = document.querySelector('.role-summary-hours[data-role="' + k + '"]');
+      if (el) { el.textContent = totals[k] + "시간"; }
+    });
+  }
+  selects.forEach(function(sel){
+    sel.addEventListener("change", function(){
+      sel.className = "role-select " + sel.value;
+      var idx = sel.getAttribute("data-idx");
+      saved[idx] = sel.value;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch(e) {}
+      summarize();
+    });
+  });
+  summarize();
+})();
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3~4개월차 · 육아역할 · 육아답</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+:root{
+  --paper:#FFFCF3;
+  --dotgrid:#EAE2CC;
+  --ink:#221D17;
+  --ink-soft:#5A5347;
+  --pink:#FFC9D6;
+  --pink-d:#F79CB4;
+  --blue:#BFE3FF;
+  --blue-d:#8FCBFF;
+  --mint:#C9F2D8;
+  --mint-d:#8FE0B4;
+  --yellow:#FFE79A;
+  --yellow-d:#FFD65C;
+  --lav:#E4D8FF;
+  --lav-d:#C9B6FF;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background-color:var(--paper);
+  background-image:radial-gradient(circle, var(--dotgrid) 1.3px, transparent 1.3px);
+  background-size:24px 24px;
+  color:var(--ink);
+  font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.app{max-width:720px;margin:0 auto;padding:30px 18px 70px;min-height:100vh;}
+
+h1,h2,.font-display{font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-weight:700;}
+
+/* ---- brand ---- */
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:30px;}
+.brand a{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand svg{width:34px;height:34px;flex:none;}
+.brand-name{font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;font-size:18px;font-weight:700;}
+
+.back-link{display:inline-flex; align-items:center; gap:4px; font-size:14px; color:var(--ink-soft); text-decoration:none; margin-bottom:18px;}
+.back-link:hover{color:var(--ink);}
+
+/* ---- sketch base ---- */
+.sketch{position:relative; border:2.5px solid var(--ink); z-index:0; background:var(--card);}
+.sketch::before{content:'';position:absolute;inset:-5px;border:2px solid var(--ink);opacity:.28;border-radius:inherit;z-index:-1;}
+.wob-1{border-radius:255px 18px 225px 30px/28px 225px 30px 255px;}
+.wob-2{border-radius:22px 240px 24px 235px/235px 24px 240px 22px;}
+.tilt-1{transform:rotate(-1.1deg);}
+.tilt-2{transform:rotate(0.9deg);}
+
+.sticker-tag{
+  display:inline-block; font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-size:14px; font-weight:700;
+  background:var(--blue); border:2px solid var(--ink); border-radius:255px 20px 225px 20px/20px 225px 20px 255px;
+  padding:3px 14px; transform:rotate(-2deg); margin-bottom:14px;
+}
+
+h1{font-size:clamp(26px,6vw,36px); line-height:1.28; margin:0 0 12px;}
+p.lede{font-size:16px; line-height:1.6; color:var(--ink-soft); max-width:52ch; margin:0 0 32px;}
+
+/* ---- project cards ---- */
+.project-card{padding:24px 22px; margin-bottom:22px;}
+.project-top{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+.project-name{font-size:20px; font-weight:700;}
+.project-status{font-size:11.5px; font-weight:700; padding:3px 11px; border:1.5px solid var(--ink); border-radius:999px; background:var(--mint);}
+.project-desc{font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin:0 0 18px;}
+
+.sub-list{display:flex; flex-direction:column; gap:10px;}
+.sub-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:13px 16px; border:2px solid var(--ink); border-radius:16px 8px 16px 8px; background:#FFFCF3;
+}
+.sub-row .sub-info{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.sub-row .sub-name{font-size:15px; font-weight:700;}
+.sub-badge{font-size:11px; font-weight:700; padding:2px 9px; border:1.5px solid var(--ink); border-radius:999px; background:var(--yellow);}
+.sub-row .btn-go{
+  appearance:none; cursor:pointer; font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-size:13px; font-weight:700;
+  border:2px solid var(--ink); border-radius:255px 16px 225px 16px/16px 225px 16px 255px;
+  padding:8px 14px; background:#fff; box-shadow:2px 2px 0 var(--ink); text-decoration:none; color:var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease; white-space:nowrap;
+}
+.sub-row .btn-go:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 var(--ink);}
+
+.more-note{font-size:13.5px; color:var(--ink-soft); margin-top:16px; padding-top:14px; border-top:2px dashed var(--dotgrid);}
+
+footer.foot{text-align:center; margin-top:44px; font-size:12px; color:var(--ink-soft); font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;}
+</style>
+<style>
+.role-legend{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 22px}
+.role-chip{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;border:2px solid var(--ink);background:var(--card)}
+.role-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.role-dot.wife{background:var(--pink-d)}
+.role-dot.husband{background:var(--blue-d)}
+.role-dot.helper{background:var(--mint-d)}
+.role-dot.extra{background:var(--lav-d)}
+.note-box{background:var(--yellow);border:2px solid var(--ink);border-radius:16px;padding:14px 18px;font-size:14px;line-height:1.6;margin-bottom:26px;box-shadow:3px 3px 0 var(--ink)}
+.section-title{margin:0 0 4px;font-size:19px}
+.section-sub{color:var(--ink-soft);font-size:13px;margin:0 0 16px}
+.role-summary{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.role-summary-item{flex:1;min-width:110px;border:2px solid var(--ink);border-radius:16px;padding:12px 14px;text-align:center;box-shadow:3px 3px 0 var(--ink)}
+.role-summary-item.wife{background:var(--pink)}
+.role-summary-item.husband{background:var(--blue)}
+.role-summary-item.helper{background:var(--mint)}
+.role-summary-item.extra{background:var(--lav)}
+.role-summary-name{font-size:12px;font-weight:700;opacity:.8}
+.role-summary-hours{font-size:22px;font-weight:800;margin-top:2px}
+.timeline{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+.timeline-row{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:3px 3px 0 var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+.timeline-time{font-weight:800;font-size:15px;min-width:104px}
+.activity-flow{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:180px}
+.activity-pill{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;padding:4px 9px;border-radius:999px;border:1.5px solid var(--ink);background:var(--paper);white-space:nowrap}
+.role-select{font-family:inherit;font-weight:800;font-size:12.5px;padding:7px 10px;border-radius:12px;border:2px solid var(--ink);cursor:pointer;min-width:104px;text-align:center;color:var(--ink)}
+.role-select.wife{background:var(--pink)}
+.role-select.husband{background:var(--blue)}
+.role-select.helper{background:var(--mint)}
+.role-select.extra{background:var(--lav)}
+.age-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.age-nav a{font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;border:2px solid var(--ink);background:var(--card);text-decoration:none;color:var(--ink)}
+.age-nav a.current{background:var(--pink-d)}
+@media (max-width:480px){.timeline-row{padding:12px}.timeline-time{min-width:80px;font-size:13px}}
+</style>
+<body>
+<div class="app">
+<div class="brand"><svg viewBox="0 0 64 64"><circle cx="32" cy="36" r="20" fill="#E9F3FF" stroke="var(--ink)" stroke-width="2.5"/><circle cx="24" cy="34" r="2.5" fill="var(--ink)"/><circle cx="40" cy="34" r="2.5" fill="var(--ink)"/><path d="M24 44 Q32 50 40 44" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 30 Q20 14 32 14 Q44 14 50 30" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><div class="brand-name">육아답 프로젝트 · 육아역할</div></div>
+<a class="back-link" href="index.html">← 육아역할 다른 편 보기</a>
+<span class="sticker-tag">⏰ 3~4개월차 · 4시간 수유텀</span>
+<h1>3~4개월차,<br>패턴이 조금씩 보여요</h1>
+<p class="lede">이 시기는 4시간마다 수유가 필요하다고 가정했어요. 막수는 밤 11시 기준, 하루 6번의 수유 텀에 맞춰 놀고·먹고·자고 흐름과 담당을 나눠봤어요.</p>
+<div class="age-nav"><a href="age1.html">🌙 1~2개월차</a><a href="age2.html" class="current">⏰ 3~4개월차</a><a href="age3.html">☀️ 5~6개월차</a></div><div class="note-box">⚠️ 4개월 무렵엔 수면 주기가 어른과 비슷해지면서 일시적으로 잠투정이 늘 수 있어요(4개월 수면 퇴행). 산후도우미 지원이 끝났다면 +알파(조부모·이모 등) 칸을 활용해보세요.</div>
+<div class="role-legend"><span class="role-chip"><span class="role-dot wife"></span>아내</span><span class="role-chip"><span class="role-dot husband"></span>남편</span><span class="role-chip"><span class="role-dot helper"></span>산후도우미</span><span class="role-chip"><span class="role-dot extra"></span>+알파 (조부모·이모 등)</span></div>
+<h2 class="section-title">누가 몇 시간 맡을까요?</h2>
+<p class="section-sub">담당을 바꾸면 아래 숫자도 바로 바뀌어요.</p>
+<div class="role-summary"><div class="role-summary-item wife"><div class="role-summary-name">아내</div><div class="role-summary-hours" data-role="wife">0시간</div></div><div class="role-summary-item husband"><div class="role-summary-name">남편</div><div class="role-summary-hours" data-role="husband">0시간</div></div><div class="role-summary-item helper"><div class="role-summary-name">산후도우미</div><div class="role-summary-hours" data-role="helper">0시간</div></div><div class="role-summary-item extra"><div class="role-summary-name">+알파</div><div class="role-summary-hours" data-role="extra">0시간</div></div></div>
+<h2 class="section-title">하루 24시간 흐름</h2>
+<p class="section-sub">한 타임(4시간)마다 먹고 → 놀고 → 자고 순서예요.</p>
+<div class="timeline">
+<div class="timeline-row"><div class="timeline-time">03:00~07:00</div><div class="activity-flow"><span class="activity-pill">🍼 새벽수유 03:00~03:15</span><span class="activity-pill">😴 자고 03:15~07:00</span></div><select class="role-select husband" data-idx="0" data-hours="4"><option value="wife">아내</option><option value="husband" selected>남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">07:00~11:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 07:00~07:20</span><span class="activity-pill">🎈 놀고 07:20~08:30</span><span class="activity-pill">😴 자고 08:30~11:00</span></div><select class="role-select wife" data-idx="1" data-hours="4"><option value="wife" selected>아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">11:00~15:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 11:00~11:20</span><span class="activity-pill">🎈 놀고 11:20~12:30</span><span class="activity-pill">😴 자고 12:30~15:00</span></div><select class="role-select extra" data-idx="2" data-hours="4"><option value="wife">아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra" selected>+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">15:00~19:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 15:00~15:20</span><span class="activity-pill">🎈 놀고 15:20~16:30</span><span class="activity-pill">😴 자고 16:30~19:00</span></div><select class="role-select wife" data-idx="3" data-hours="4"><option value="wife" selected>아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">19:00~23:00</div><div class="activity-flow"><span class="activity-pill">🍼 먹고 19:00~19:20</span><span class="activity-pill">🎈 놀고 19:20~20:30</span><span class="activity-pill">😴 자고 20:30~23:00</span></div><select class="role-select husband" data-idx="4" data-hours="4"><option value="wife">아내</option><option value="husband" selected>남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+<div class="timeline-row"><div class="timeline-time">23:00~03:00</div><div class="activity-flow"><span class="activity-pill">🍼 막수 23:00~23:15</span><span class="activity-pill">😴 자고 23:15~03:00</span></div><select class="role-select wife" data-idx="5" data-hours="4"><option value="wife" selected>아내</option><option value="husband">남편</option><option value="helper">산후도우미</option><option value="extra">+알파</option></select></div>
+</div>
+
+<footer class="foot">☁ 육아답 · 프로토타입 버전 · 담당은 예시일 뿐, 우리 집 상황에 맞게 바꿔보세요 ☁</footer>
+</div>
+<script>
+(function(){
+  var STORAGE_KEY = "yukadap-role-age2";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch(e) { saved = {}; }
+  var selects = Array.prototype.slice.call(document.querySelectorAll(".role-select"));
+  selects.forEach(function(sel){
+    var idx = sel.getAttribute("data-idx");
+    if (saved[idx]) { sel.value = saved[idx]; }
+    sel.className = "role-select " + sel.value;
+  });
+  function summarize(){
+    var totals = {wife:0, husband:0, helper:0, extra:0};
+    selects.forEach(function(sel){
+      var h = parseFloat(sel.getAttribute("data-hours")) || 0;
+      totals[sel.value] = (totals[sel.value] || 0) + h;
+    });
+    Object.keys(totals).forEach(function(k){
+      var el = document.querySelector('.role-summary-hours[data-role="' + k + '"]');
+      if (el) { el.textContent = totals[k] + "시간"; }
+    });
+  }
+  selects.forEach(function(sel){
+    sel.addEventListener("change", function(){
+      sel.className = "role-select " + sel.value;
+      var idx = sel.getAttribute("data-idx");
+      saved[idx] = sel.value;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch(e) {}
+      summarize();
+    });
+  });
+  summarize();
+})();
+</script>
+</body>
+</html>
