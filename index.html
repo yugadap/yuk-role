@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>육아역할 · 육아답</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+:root{
+  --paper:#FFFCF3;
+  --dotgrid:#EAE2CC;
+  --ink:#221D17;
+  --ink-soft:#5A5347;
+  --pink:#FFC9D6;
+  --pink-d:#F79CB4;
+  --blue:#BFE3FF;
+  --blue-d:#8FCBFF;
+  --mint:#C9F2D8;
+  --mint-d:#8FE0B4;
+  --yellow:#FFE79A;
+  --yellow-d:#FFD65C;
+  --lav:#E4D8FF;
+  --lav-d:#C9B6FF;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background-color:var(--paper);
+  background-image:radial-gradient(circle, var(--dotgrid) 1.3px, transparent 1.3px);
+  background-size:24px 24px;
+  color:var(--ink);
+  font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.app{max-width:720px;margin:0 auto;padding:30px 18px 70px;min-height:100vh;}
+
+h1,h2,.font-display{font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-weight:700;}
+
+/* ---- brand ---- */
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:30px;}
+.brand a{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand svg{width:34px;height:34px;flex:none;}
+.brand-name{font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;font-size:18px;font-weight:700;}
+
+.back-link{display:inline-flex; align-items:center; gap:4px; font-size:14px; color:var(--ink-soft); text-decoration:none; margin-bottom:18px;}
+.back-link:hover{color:var(--ink);}
+
+/* ---- sketch base ---- */
+.sketch{position:relative; border:2.5px solid var(--ink); z-index:0; background:var(--card);}
+.sketch::before{content:'';position:absolute;inset:-5px;border:2px solid var(--ink);opacity:.28;border-radius:inherit;z-index:-1;}
+.wob-1{border-radius:255px 18px 225px 30px/28px 225px 30px 255px;}
+.wob-2{border-radius:22px 240px 24px 235px/235px 24px 240px 22px;}
+.tilt-1{transform:rotate(-1.1deg);}
+.tilt-2{transform:rotate(0.9deg);}
+
+.sticker-tag{
+  display:inline-block; font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-size:14px; font-weight:700;
+  background:var(--blue); border:2px solid var(--ink); border-radius:255px 20px 225px 20px/20px 225px 20px 255px;
+  padding:3px 14px; transform:rotate(-2deg); margin-bottom:14px;
+}
+
+h1{font-size:clamp(26px,6vw,36px); line-height:1.28; margin:0 0 12px;}
+p.lede{font-size:16px; line-height:1.6; color:var(--ink-soft); max-width:52ch; margin:0 0 32px;}
+
+/* ---- project cards ---- */
+.project-card{padding:24px 22px; margin-bottom:22px;}
+.project-top{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+.project-name{font-size:20px; font-weight:700;}
+.project-status{font-size:11.5px; font-weight:700; padding:3px 11px; border:1.5px solid var(--ink); border-radius:999px; background:var(--mint);}
+.project-desc{font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin:0 0 18px;}
+
+.sub-list{display:flex; flex-direction:column; gap:10px;}
+.sub-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:13px 16px; border:2px solid var(--ink); border-radius:16px 8px 16px 8px; background:#FFFCF3;
+}
+.sub-row .sub-info{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.sub-row .sub-name{font-size:15px; font-weight:700;}
+.sub-badge{font-size:11px; font-weight:700; padding:2px 9px; border:1.5px solid var(--ink); border-radius:999px; background:var(--yellow);}
+.sub-row .btn-go{
+  appearance:none; cursor:pointer; font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif; font-size:13px; font-weight:700;
+  border:2px solid var(--ink); border-radius:255px 16px 225px 16px/16px 225px 16px 255px;
+  padding:8px 14px; background:#fff; box-shadow:2px 2px 0 var(--ink); text-decoration:none; color:var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease; white-space:nowrap;
+}
+.sub-row .btn-go:hover{transform:translate(-2px,-2px); box-shadow:4px 4px 0 var(--ink);}
+
+.more-note{font-size:13.5px; color:var(--ink-soft); margin-top:16px; padding-top:14px; border-top:2px dashed var(--dotgrid);}
+
+footer.foot{text-align:center; margin-top:44px; font-size:12px; color:var(--ink-soft); font-family:'Nanum Gothic', 'Malgun Gothic', sans-serif;}
+</style>
+<body>
+<div class="app">
+<div class="brand">
+<svg viewBox="0 0 64 64"><circle cx="32" cy="36" r="20" fill="#E9F3FF" stroke="var(--ink)" stroke-width="2.5"/><circle cx="24" cy="34" r="2.5" fill="var(--ink)"/><circle cx="40" cy="34" r="2.5" fill="var(--ink)"/><path d="M24 44 Q32 50 40 44" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M14 30 Q20 14 32 14 Q44 14 50 30" stroke="var(--ink)" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+<div class="brand-name">육아답 프로젝트 · 육아역할</div>
+</div>
+<a class="back-link" href="https://yukadap-hub.vercel.app/projects.html">← 다른 프로젝트 보기</a>
+<span class="sticker-tag">🧩 육아역할 OPEN!</span>
+<h1>누가, 언제,<br>뭘 맡을까?</h1>
+<p class="lede">월령별 수유텀에 맞춰 하루 24시간을 놀고·먹고·자고로 나누고, 아내·남편·산후도우미·+알파가 어떻게 나눠 맡으면 좋을지 정리해봤어요. 담당은 우리 집 사정에 맞게 바로 바꿀 수 있어요.</p>
+
+<div class="project-card sketch wob-1 tilt-1">
+<div class="project-top">
+<span class="project-name">육아역할</span>
+<span class="project-status">OPEN</span>
+</div>
+<p class="project-desc">시기별로 수유텀이 다르니, 하루 일과와 역할 배정도 달라져요. 우리 아기 개월수에 맞는 편을 골라주세요.</p>
+<div class="sub-list">
+<div class="sub-row">
+<div class="sub-info"><span class="sub-name">🌙 1~2개월차 · 3시간 수유텀</span><span class="sub-badge">OPEN</span></div>
+<a class="btn-go" href="age1.html">바로가기 →</a>
+</div>
+<div class="sub-row">
+<div class="sub-info"><span class="sub-name">⏰ 3~4개월차 · 4시간 수유텀</span><span class="sub-badge">OPEN</span></div>
+<a class="btn-go" href="age2.html">바로가기 →</a>
+</div>
+<div class="sub-row">
+<div class="sub-info"><span class="sub-name">☀️ 5~6개월차 · 5시간 수유텀</span><span class="sub-badge">OPEN</span></div>
+<a class="btn-go" href="age3.html">바로가기 →</a>
+</div>
+</div>
+</div>
+
+<footer class="foot">☁ 육아답 · 프로토타입 버전 · 우리 아기 신호에 맞춰 자유롭게 조정해주세요 ☁</footer>
+</div>
+</body>
+</html>
